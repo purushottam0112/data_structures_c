@@ -290,6 +290,7 @@ int binary(int A[], int init_na, int skey, int start, int end)
     {
         return mid - 1;
     }
+    
     else if (skey == A[mid + 1])
     {
         return mid + 1;
