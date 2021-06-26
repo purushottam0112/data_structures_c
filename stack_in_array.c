@@ -3,34 +3,33 @@
 #define MAX 100
 #define ERROR -1
 #define SUCCESS 0
-#define TRUE 1
-#define FALSE 0
+
 
 int push(int stack[], int ele, int *top)
 {
-    if (*top < MAX)
+    if (*top == MAX - 1)
+    {
+        printf("Stack overflow\n");
+    }
+    else
     {
         ++*top;
         stack[(*top)] = ele;
         printf("Sucessfully pusing\n");
-    }
-    else
-    {
-        printf("Stack overflow\n");
-    }   
+    }     
 }
 
 int pop(int stack[], int *ele, int *top)
 {
-    if (*top > -1)
+    if (*top == -1)
     {
-        *ele = stack[*top];
-        --*top;
+        printf("Stack Underflow\n");
     }
     
     else
     {
-        printf("Stack Underflow\n");
+        *ele = stack[*top];
+        --*top;
     }
 }
 
